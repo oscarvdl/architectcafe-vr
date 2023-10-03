@@ -8,7 +8,7 @@
   <body>
     <a-scene>
         <a-assets>
-          <video id="videoBunny"
+          <video id="Mary"
                  src="videos/examples_basic_video_textures_MaryOculus.webm"
                  autoplay
                  loop="true"
@@ -17,8 +17,24 @@
                  webkit-playsinline></video>
         </a-assets>
   
-        <a-videosphere src="#videoBunny" play-on-click stereo="eye:left"></a-videosphere>
-        <a-videosphere src="#videoBunny" play-on-click stereo="eye:right"></a-videosphere>
+        <a-videosphere src="#Mary" play-on-click stereo="eye:left"></a-videosphere>
+        <a-videosphere src="#Mary" play-on-click stereo="eye:right"></a-videosphere>
+
+        <a-entity geometry="primitive: sphere;
+        radius: 100;
+        segmentsWidth: 64;
+        segmentsHeight: 64;"
+        material="shader: flat; src: #Mary;"
+        scale="-1 1 1" stereo="eye:left">
+        </a-entity>
+
+        <a-entity geometry="primitive: sphere;
+        radius: 100;
+        segmentsWidth: 64;
+        segmentsHeight: 64;"
+        material="shader: flat; src: #Mary;"
+        scale="-1 1 1" stereo="eye:right">
+        </a-entity>
 
         <a-camera stereocam="eye: left">
             <a-entity
@@ -28,7 +44,7 @@
                     wrapCount: 100;
                     color: black;
                     value: Click or tap to start video"
-              hide-on-play="#videoBunny">
+              hide-on-play="#Mary">
             </a-entity>
           </a-camera>
         </a-scene>
