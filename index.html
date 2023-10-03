@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="../js/aframe-stereo-component.min.js"></script>
+    <script src="../js/play-on-click.js"></script>
+    <script src="../js/hide-on-play.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+          <video id="videoBunny"
+                 src="videos/examples_basic_video_textures_MaryOculus.webm"
+                 autoplay
+                 loop="true"
+                 crossOrigin="anonymous"
+                 muted
+                 webkit-playsinline></video>
+        </a-assets>
+  
+        <a-videosphere src="#videoBunny" play-on-click stereo="eye:left"></a-videosphere>
+        <a-videosphere src="#videoBunny" play-on-click stereo="eye:right"></a-videosphere>
+
+        <a-camera stereocam="eye: left">
+            <a-entity
+              position="0 0 -1.5"
+              text="align: center;
+                    width: 6;
+                    wrapCount: 100;
+                    color: black;
+                    value: Click or tap to start video"
+              hide-on-play="#videoBunny">
+            </a-entity>
+          </a-camera>
+        </a-scene>
+  </body>
+</html>
